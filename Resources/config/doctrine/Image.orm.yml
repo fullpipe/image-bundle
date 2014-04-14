@@ -1,0 +1,23 @@
+Fullpipe\ImageBundle\Entity\Image:
+    type: mappedSuperclass
+    table: fp_image
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        originalName:
+            type: string
+            length: 255
+            nullable: true
+            column: original_name
+        path:
+            type: string
+            length: 255
+        thumbSizes:
+            type: array
+            column: thumb_sizes
+            nullable: true
+    lifecycleCallbacks: {  }
