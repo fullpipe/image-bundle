@@ -1,0 +1,25 @@
+{
+    "name": "fullpipe/image-bundle",
+    "type": "symfony-bundle",
+    "description": "Simple image storage",
+    "keywords": ["image"],
+    "homepage": "https://github.com/fullpipe/image-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eugene Bravov",
+            "email": "eugene@punchmedia.ru",
+            "homepage": "https://github.com/fullpipe/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "~2.3",
+    },
+    "autoload": {
+        "psr-0": {
+            "Fullpipe\\ImageBundle": ""
+        }
+    },
+    "target-dir": "Fullpipe/ImageBundle"
+}

@@ -8,6 +8,9 @@ use Symfony\Component\Form\FormEvents;
 
 class BuildImageFormListener implements EventSubscriberInterface
 {
+    /**
+     * {@inheritdoc}
+     */
     public static function getSubscribedEvents()
     {
         return array(
@@ -15,6 +18,10 @@ class BuildImageFormListener implements EventSubscriberInterface
         );
     }
 
+    /**
+     * Post form submit listener
+     * @param  FormEvent $event
+     */
     public function postSubmit(FormEvent $event)
     {
         $image = $event->getData();

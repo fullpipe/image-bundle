@@ -13,7 +13,7 @@ use Symfony\Component\Form\FormInterface;
 use Fullpipe\ImageBundle\Form\EventListener\BuildImageFormListener;
 
 /**
- * Banner type.
+ * Image type.
  */
 class ImageType extends AbstractType
 {
@@ -31,11 +31,17 @@ class ImageType extends AbstractType
         ;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['image'] = $form->getData();
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
@@ -44,6 +50,9 @@ class ImageType extends AbstractType
         ));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'fullpipe_image_image';

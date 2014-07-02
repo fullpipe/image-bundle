@@ -8,7 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Braincrafted\Bundle\BootstrapBundle\Form\Type\BootstrapSortableCollectionType;
 
 /**
- * Image collection.
+ * Image collection. For using with https://github.com/fullpipe/bootstrap-bundle/tree/sortable-form
  */
 class ImageCollectionType extends BootstrapSortableCollectionType
 {
