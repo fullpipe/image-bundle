@@ -18,6 +18,13 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('fullpipe_image');
 
+        $rootNode
+            ->children()
+                ->scalarNode('data_root')->isRequired()->end()
+                ->scalarNode('web_root')->isRequired()->end()
+            ->end()
+            ;
+
         return $treeBuilder;
     }
 }

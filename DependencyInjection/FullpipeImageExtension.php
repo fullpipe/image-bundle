@@ -25,6 +25,10 @@ class FullpipeImageExtension extends Extension implements PrependExtensionInterf
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
+        $container->setParameter('fullpipe_image.data_root', $config['data_root']);
+        $container->setParameter('fullpipe_image.web_root', $config['web_root']);
+        $container->setParameter('fullpipe_image.data_root_web_path', str_replace(realpath($config['web_root']), '', realpath($config['data_root'])));
+
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
