@@ -2,6 +2,7 @@ parameters:
     fullpipe_image.listener.image_upload.class: Fullpipe\ImageBundle\EventListener\ImageUploadListener
     fullpipe_image.image_uploader.class: Fullpipe\ImageBundle\Uploader\ImageUploader
     fullpipe_image.form.type.image.class: Fullpipe\ImageBundle\Form\Type\ImageType
+    fullpipe_image.twig.image.class: Fullpipe\ImageBundle\Twig\ImageExtension
 
 services:
     fullpipe_image.image_uploader:
