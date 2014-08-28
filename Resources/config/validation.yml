@@ -1,6 +1,5 @@
 Fullpipe\ImageBundle\Entity\Image:
     properties:
         file:
-            - File:
+            - Image:
                 maxSize: 2M
-                mimeTypes: ["image/jpeg", "image/png"]

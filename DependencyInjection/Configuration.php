@@ -5,9 +5,6 @@ namespace Fullpipe\ImageBundle\DependencyInjection;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
-/**
- * FullpipeImageBundle configuration
- */
 class Configuration implements ConfigurationInterface
 {
     /**

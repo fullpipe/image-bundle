@@ -27,17 +27,9 @@ services:
         tags:
             - { name: form.type, alias: image_collection }
 
-
-    # fullpipe_image.repository.banner:
-    #     class: %fullpipe_image.repository.banner.class%
-    #     factory_service: doctrine.orm.entity_manager
-    #     factory_method: getRepository
-    #     arguments:
-    #         - "FullpipeImageBundle:Banner"
-
-    # fullpipe_image.twig.banner:
-    #     class: %fullpipe_image.twig.banner.class%
-    #     arguments:
-    #         - @service_container
-    #     tags:
-    #         - { name: twig.extension }
+    fullpipe_image.twig.image:
+        class: %fullpipe_image.twig.image.class%
+        arguments:
+            - %fullpipe_image.data_root_web_path%
+        tags:
+            - { name: twig.extension }

@@ -25,8 +25,8 @@ class ImageType extends AbstractType
         $builder
             ->addEventSubscriber(new BuildImageFormListener())
             ->add('file', 'file', array(
-                'label'        => 'fullpipe_image.form.image.file',
-                'required' => false,
+                'label'     => 'fullpipe_image.form.image.file',
+                'required'  => false,
             ))
         ;
     }
@@ -37,17 +37,6 @@ class ImageType extends AbstractType
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['image'] = $form->getData();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        $resolver->setDefaults(array(
-            'sortable' => true,
-            'property_path'      => 'id',
-        ));
     }
 
     /**

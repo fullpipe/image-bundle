@@ -19,12 +19,15 @@ class Image implements ImageInterface
      */
     private $thumbSizes;
 
-    protected $url;
-
     /**
      * @var \SplFileInfo
      */
     protected $file;
+
+    /**
+     * @var string
+     */
+    private $originalName;
 
     /**
      * Set path
@@ -47,6 +50,16 @@ class Image implements ImageInterface
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * Has path
+     *
+     * @return boolean
+     */
+    public function hasPath()
+    {
+        return null !== $this->path;
     }
 
     /**
@@ -75,23 +88,6 @@ class Image implements ImageInterface
         return $this;
     }
 
-    public function setUrl($url)
-    {
-        $this->url = $url;
-
-        return $this;
-    }
-
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    public function hasUrl()
-    {
-        return null !== $this->url;
-    }
-
     /**
      * Set thumbSizes
      *
@@ -114,11 +110,6 @@ class Image implements ImageInterface
     {
         return $this->thumbSizes;
     }
-    /**
-     * @var string
-     */
-    private $originalName;
-
 
     /**
      * Set originalName
@@ -153,6 +144,10 @@ class Image implements ImageInterface
         return $this->id;
     }
 
+    /**
+     * Is new
+     * @return boolean
+     */
     public function isNew()
     {
         return null === $this->id;

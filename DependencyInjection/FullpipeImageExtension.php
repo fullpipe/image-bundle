@@ -8,11 +8,6 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 
-/**
- * This is the class that loads and manages your bundle configuration
- *
- * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
- */
 class FullpipeImageExtension extends Extension implements PrependExtensionInterface
 {
     protected $formTemplate = 'FullpipeImageBundle:Form:bootstrap.html.twig';
@@ -32,7 +27,6 @@ class FullpipeImageExtension extends Extension implements PrependExtensionInterf
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
-
 
     /**
      * {@inheritDoc}
