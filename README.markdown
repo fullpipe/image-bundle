@@ -1,5 +1,6 @@
 About ImageBundle
 =================
+Simple storage for images.
 
 ## Installation
 
@@ -37,7 +38,6 @@ class AppKernel extends Kernel
 fullpipe_image:
     web_root: %kernel.root_dir%/../web //Web directory
     data_root: %kernel.root_dir%/../web/media/image //Directory for storing images
-
 ```
 
 ## Usage
