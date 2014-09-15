@@ -7,11 +7,11 @@ use Fullpipe\ImageBundle\Entity\ImageInterface;
 
 class ImageExtension extends \Twig_Extension
 {
-    protected $dataRootWebPath;
+    protected $webRoot;
 
-    public function __construct($dataRootWebPath)
+    public function __construct($webRoot)
     {
-        $this->dataRootWebPath = $dataRootWebPath;
+        $this->webRoot = $webRoot;
     }
 
     /**
@@ -35,7 +35,7 @@ class ImageExtension extends \Twig_Extension
 
     public function getWebPath(ImageInterface $image)
     {
-        return $this->dataRootWebPath . DIRECTORY_SEPARATOR . $image->getPath();
+        return $this->webRoot . '/' . $image->getPath();
     }
 
     /**

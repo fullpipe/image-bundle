@@ -31,6 +31,6 @@ services:
     fullpipe_image.twig.image:
         class: %fullpipe_image.twig.image.class%
         arguments:
-            - %fullpipe_image.data_root_web_path%
+            - %fullpipe_image.web_root%
         tags:
             - { name: twig.extension }

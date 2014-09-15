@@ -36,7 +36,7 @@ class AppKernel extends Kernel
 
 ```yaml
 fullpipe_image:
-    web_root: %kernel.root_dir%/../web //Web directory
+    web_root: /media/image //Web directory
     data_root: %kernel.root_dir%/../web/media/image //Directory for storing images
 ```
 
