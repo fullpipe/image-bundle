@@ -14,8 +14,22 @@ class BuildImageFormListener implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return array(
-            FormEvents::POST_SUBMIT   => 'postSubmit'
+            FormEvents::POST_SUBMIT   => 'postSubmit',
+            FormEvents::SUBMIT   => 'submit'
         );
+    }
+
+    /**
+     * Submit listener
+     * @param  FormEvent $event
+     */
+    public function submit(FormEvent $event)
+    {
+        $image = $event->getData();
+
+        if ($image && $image->isNew() && !$image->hasFile()) {
+            $event->setData(null);
+        }
     }
 
     /**
@@ -26,7 +40,7 @@ class BuildImageFormListener implements EventSubscriberInterface
     {
         $image = $event->getData();
 
-        if ($image->hasFile()) {
+        if ($image && $image->hasFile()) {
             $image->setPath(null);
         }
     }
