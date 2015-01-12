@@ -42,7 +42,6 @@ class FullpipeImageExtension extends Extension implements PrependExtensionInterf
         }
 
         // Configure Twig if TwigBundle is activated and the option
-        // "braincrafted_bootstrap.auto_configure.twig" is set to TRUE (default value).
         if (true === isset($bundles['TwigBundle'])) {
             $this->configureTwigBundle($container);
         }

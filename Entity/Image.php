@@ -145,8 +145,7 @@ class Image implements ImageInterface
     }
 
     /**
-     * Is new
-     * @return boolean
+     * {@inheritdoc}
      */
     public function isNew()
     {

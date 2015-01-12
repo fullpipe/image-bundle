@@ -8,9 +8,15 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class ImageUploader implements ImageUploaderInterface
 {
-    protected $filesystem;
+    /**
+     * @var Symfony\Component\Filesystem\Filesystem
+     */
+    private $filesystem;
 
-    protected $dataRoot;
+    /**
+     * @var string
+     */
+    private $dataRoot;
 
     public function __construct(Filesystem $filesystem, $dataRoot)
     {
@@ -18,6 +24,9 @@ class ImageUploader implements ImageUploaderInterface
         $this->dataRoot = $dataRoot;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function upload(ImageInterface $image)
     {
         if (!$image->hasFile()) {
@@ -46,6 +55,9 @@ class ImageUploader implements ImageUploaderInterface
         );
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function remove(ImageInterface $image)
     {
         $path = $image->getPath();
@@ -61,11 +73,21 @@ class ImageUploader implements ImageUploaderInterface
         }
     }
 
+    /**
+     * Get absolute path
+     * @param  string $path image path
+     * @return string       absolute image path
+     */
     private function getAbsolutePath($path)
     {
         return $this->dataRoot . DIRECTORY_SEPARATOR . $path;
     }
 
+    /**
+     * Expand image path
+     * @param  string $path
+     * @return string
+     */
     private function expandPath($path)
     {
         return sprintf(

@@ -6,6 +6,9 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 
+/**
+ * Build image form listener
+ */
 class BuildImageFormListener implements EventSubscriberInterface
 {
     /**
