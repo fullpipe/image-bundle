@@ -34,8 +34,6 @@ class FullpipeImageExtension extends Extension implements PrependExtensionInterf
     {
         $bundles = $container->getParameter('kernel.bundles');
 
-        $configs = $container->getExtensionConfig($this->getAlias());
-
         if (!isset($bundles['BraincraftedBootstrapBundle'])) {
             return;
         }
