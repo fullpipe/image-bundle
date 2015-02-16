@@ -2,7 +2,6 @@
 
 namespace Fullpipe\ImageBundle\Twig;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Fullpipe\ImageBundle\Entity\ImageInterface;
 
 class ImageExtension extends \Twig_Extension
@@ -35,7 +34,7 @@ class ImageExtension extends \Twig_Extension
 
     public function getWebPath(ImageInterface $image)
     {
-        return $this->webRoot . '/' . $image->getPath();
+        return $this->webRoot.'/'.$image->getPath();
     }
 
     /**
