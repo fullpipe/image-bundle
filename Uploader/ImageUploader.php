@@ -35,23 +35,23 @@ class ImageUploader implements ImageUploaderInterface
 
         $this->remove($image);
 
+        $imageFile = $image->getFile();
+
         do {
             $hash = md5(uniqid(mt_rand(), true));
-            $path = $this->expandPath($hash.'.'.$image->getFile()->guessExtension());
+            $path = $this->expandPath($hash.'.'.$imageFile->getExtension());
             $absPath = $this->getAbsolutePath($path);
         } while ($this->filesystem->exists($absPath));
 
-        $file = $image->getFile();
-
         $image->setPath($path);
 
-        if ($file instanceof UploadedFile ) {
-            $image->setOriginalName($image->getFile()->getClientOriginalName());
+        if ($imageFile instanceof UploadedFile) {
+            $image->setOriginalName($imageFile->getClientOriginalName());
         }
 
         $this->filesystem->dumpFile(
             $absPath,
-            file_get_contents($image->getFile()->getPathname())
+            file_get_contents($imageFile->getPathname())
         );
     }
 
@@ -74,18 +74,22 @@ class ImageUploader implements ImageUploaderInterface
     }
 
     /**
-     * Get absolute path
-     * @param  string $path image path
-     * @return string       absolute image path
+     * Get absolute path.
+     *
+     * @param string $path image path
+     *
+     * @return string absolute image path
      */
     private function getAbsolutePath($path)
     {
-        return $this->dataRoot . DIRECTORY_SEPARATOR . $path;
+        return $this->dataRoot.DIRECTORY_SEPARATOR.$path;
     }
 
     /**
-     * Expand image path
-     * @param  string $path
+     * Expand image path.
+     *
+     * @param string $path
+     *
      * @return string
      */
     private function expandPath($path)
