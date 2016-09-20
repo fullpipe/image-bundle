@@ -6,17 +6,17 @@ parameters:
 
 services:
     fullpipe_image.image_uploader:
-        class: %fullpipe_image.image_uploader.class%
+        class: "%fullpipe_image.image_uploader.class%"
         public: false
         arguments:
-            - @filesystem
-            - %fullpipe_image.data_root%
+            - "@filesystem"
+            - "%fullpipe_image.data_root%"
 
     fullpipe_image.listener.image_upload:
-        class: %fullpipe_image.listener.image_upload.class%
+        class: "%fullpipe_image.listener.image_upload.class%"
         public: false
         arguments:
-            - @fullpipe_image.image_uploader
+            - "@fullpipe_image.image_uploader"
         tags:
             - { name: doctrine.event_subscriber, connection: default }
 
@@ -29,8 +29,8 @@ services:
             - { name: form.type, alias: image_collection }
 
     fullpipe_image.twig.image:
-        class: %fullpipe_image.twig.image.class%
+        class: "%fullpipe_image.twig.image.class%"
         arguments:
-            - %fullpipe_image.web_root%
+            - "%fullpipe_image.web_root%"
         tags:
             - { name: twig.extension }

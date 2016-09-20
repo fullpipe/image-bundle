@@ -1,12 +1,6 @@
 Fullpipe\ImageBundle\Entity\Image:
     type: mappedSuperclass
     table: fp_image
-    id:
-        id:
-            type: integer
-            id: true
-            generator:
-                strategy: AUTO
     fields:
         originalName:
             type: string

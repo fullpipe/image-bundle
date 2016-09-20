@@ -7,8 +7,6 @@ namespace Fullpipe\ImageBundle\Entity;
  */
 class Image implements ImageInterface
 {
-    protected $id;
-
     /**
      * @var string
      */

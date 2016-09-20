@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\Form\FormInterface;
 use Fullpipe\ImageBundle\Form\EventListener\BuildImageFormListener;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 /**
  * Image type.
@@ -20,7 +21,7 @@ class ImageType extends AbstractType
     {
         $builder
             ->addEventSubscriber(new BuildImageFormListener())
-            ->add('file', 'file', array(
+            ->add('file', FileType::class, array(
                 'label'     => 'fullpipe_image.form.image.file',
                 'required'  => false,
             ))
