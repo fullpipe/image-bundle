@@ -3,7 +3,7 @@
 namespace Fullpipe\ImageBundle\Entity;
 
 /**
- * Image
+ * Image.
  */
 class Image implements ImageInterface
 {
@@ -28,9 +28,20 @@ class Image implements ImageInterface
     private $originalName;
 
     /**
-     * Set path
+     * To string.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->path;
+    }
+
+    /**
+     * Set path.
      *
      * @param string $path
+     *
      * @return Image
      */
     public function setPath($path)
@@ -41,7 +52,7 @@ class Image implements ImageInterface
     }
 
     /**
-     * Get path
+     * Get path.
      *
      * @return string
      */
@@ -51,9 +62,9 @@ class Image implements ImageInterface
     }
 
     /**
-     * Has path
+     * Has path.
      *
-     * @return boolean
+     * @return bool
      */
     public function hasPath()
     {
@@ -87,9 +98,10 @@ class Image implements ImageInterface
     }
 
     /**
-     * Set thumbSizes
+     * Set thumbSizes.
      *
      * @param array $thumbSizes
+     *
      * @return Image
      */
     public function setThumbSizes(array $thumbSizes)
@@ -100,7 +112,7 @@ class Image implements ImageInterface
     }
 
     /**
-     * Get thumbSizes
+     * Get thumbSizes.
      *
      * @return array
      */
@@ -110,9 +122,10 @@ class Image implements ImageInterface
     }
 
     /**
-     * Set originalName
+     * Set originalName.
      *
      * @param string $originalName
+     *
      * @return Image
      */
     public function setOriginalName($originalName)
@@ -123,7 +136,7 @@ class Image implements ImageInterface
     }
 
     /**
-     * Get originalName
+     * Get originalName.
      *
      * @return string
      */
@@ -133,9 +146,9 @@ class Image implements ImageInterface
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
