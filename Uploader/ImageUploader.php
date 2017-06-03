@@ -39,7 +39,7 @@ class ImageUploader implements ImageUploaderInterface
 
         do {
             $hash = md5(uniqid(mt_rand(), true));
-            $path = $this->expandPath($hash.'.'.$imageFile->getExtension());
+            $path = $this->expandPath($hash.'.'.$imageFile->guessExtension());
             $absPath = $this->getAbsolutePath($path);
         } while ($this->filesystem->exists($absPath));
 
